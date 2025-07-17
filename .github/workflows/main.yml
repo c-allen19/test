@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-22.04, windows-latest]
+
+    steps:
+
+      - name: Checkout code
+
+        uses: actions/checkout@v4
+
+
+      - name: Set up Python
+
+        uses: actions/setup-python@v5
+
+        with:
+          python-version: "3.10"
