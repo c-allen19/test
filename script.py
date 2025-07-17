@@ -2,7 +2,7 @@ import pytest
 
 def test_add_positive():
     from maths_class import maths # Replace with your actual package and module
-    assert maths(2,3).add() == 5
+    assert maths(2,3).add() == 6
 
 
 def test_divide_by_zero():
